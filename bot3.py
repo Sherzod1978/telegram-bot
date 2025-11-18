@@ -28,13 +28,20 @@ user_votes = {}   # user_id : class_name
 # --- Klaviatura ---
 def get_keyboard():
     buttons = []
+    row = []
 
-    for cls in classes:
-        buttons.append(
-            [InlineKeyboardButton(text=f"{cls} ❤️ {votes[cls]}", callback_data=f"vote_{cls}")]
-        )
+    for i, cls in enumerate(classes, start=1):
+        row.append(InlineKeyboardButton(text=f"{cls} ❤️ {votes[cls]}", callback_data=f"vote_{cls}"))
+        if i % 3 == 0:  # har 3 ta tugmadan keyin yangi qator
+            buttons.append(row)
+            row = []
 
+    if row:  # qolgan tugmalar uchun
+        buttons.append(row)
+
+    # Obuna tugmasi
     buttons.append([InlineKeyboardButton(text="🔔 Kanalga obuna bo‘lish", url="https://t.me/Zarbdor_IM")])
+    # Statistika tugmasi
     buttons.append([InlineKeyboardButton(text="📊 Statistika", callback_data="stats")])
 
     return InlineKeyboardMarkup(inline_keyboard=buttons)
