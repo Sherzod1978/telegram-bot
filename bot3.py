@@ -6,7 +6,7 @@ import asyncio
 import matplotlib.pyplot as plt
 
 BOT_TOKEN = "8565168044:AAERJUCshr8TtMVWiI8M4dY4X4EIjdmIvMw"
-CHANNEL_ID = "@Zarbdor_IM"
+CHANNEL_ID = "@Zarbdor_IM" 
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
