@@ -61,7 +61,7 @@ async def is_subscribed(user_id: int) -> bool:
 async def start(msg: Message):
     await msg.answer(
         "📢 Bayrog'imiz faxrimiz! O‘zingizning sinfingizga ovoz bering!\n"
-        "Rasmlar Zarbdor IM rasmiy kanalida joylangan.\n\n"
+        "Rasmlar @Zarbdor_IM rasmiy kanalida joylangan.\n\n"
         "Quyidagi sinflardan biriga ovoz bering:",
         reply_markup=get_keyboard()
     )
